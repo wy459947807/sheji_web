@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎关注夜点娱乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+</head>
+<body>
+    <figure class="qrcode-box">
+        <img src="img/share/qrcode.jpg" class="qrcode">
+        <figcaption class="tip">「长按识别二维码」</figcaption>
+    </figure>
+    <p class="desc">无需下载 APP，关注微信公众账号，<br>即可 HIGH遍 KTV！<br>让我们一起来 HIGH 爆 KTV！</p>
+
+
+
+<script src="/assets/js/share.eed688e2.js"></script>
+
+
+
+<script>
+var openid = location.href.match(/(?:\?|&)openid=(\S+?)(?:&|$)/);
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "/wechat/api.php?m=getQR&expire=111111111&detail=" + encodeURIComponent("http://" + location.host + "/user/PointAdd") + "&openid=" + (openid ? openid[1] : "unknown"), true);
+xhr.send();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a9e84022ad4ba5c4e42b26942cda6755";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

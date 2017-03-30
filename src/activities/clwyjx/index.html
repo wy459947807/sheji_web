@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>出来玩 要尽兴</title>
+	<style>
+	body {
+		margin: 0;
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+	.box {
+		position: relative;
+	}
+	.btn {
+		position: absolute;
+		top: 54%;
+		left: 50%;
+		width: 50%;
+		padding-top: 18%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	.btn-2l {
+		top: 59%;
+	}
+	</style>
+</head>
+<body>
+
+<div class="box"><img src="img/pic_01.jpg" alt=""></div>
+<div class="box"><img src="img/pic_02.jpg" alt=""></div>
+<div class="box"><img src="img/pic_03.jpg" alt=""><a href="/dist/#!/ktv/XKTV00254?stss=1" class="btn"></a></div>
+<div class="box"><img src="img/pic_04.jpg" alt=""><a href="/dist/#!/ktv/XKTV00002?stss=1" class="btn"></a></div>
+<div class="box"><img src="img/pic_05.jpg" alt=""><a href="/dist/#!/ktv/XKTV00102?stss=1" class="btn"></a></div>
+<div class="box"><img src="img/pic_06.jpg" alt=""><a href="/dist/#!/ktv/XKTV00084?stss=1" class="btn"></a></div>
+<div class="box"><img src="img/pic_07.jpg" alt=""><a href="/dist/#!/ktv/XKTV00191?stss=1" class="btn btn-2l"></a></div>
+<div class="box"><img src="img/pic_08.jpg" alt=""></div>
+
+<script src="../assets/js/jquery-2.2.3.min.js"></script>
+<script src="../assets/js/yd.js"></script>
+<script>
+YD.init();
+$(".btn").click(function() {
+    var url = this.href;
+    setTimeout(function() {
+        location.href = url;
+    }, 100);
+    ga("send", "event", "CLWYJX", "Click", url);
+    return false;
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-81213220-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

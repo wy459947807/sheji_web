@@ -1,0 +1,50 @@
+.mbsc-ios {
+    .dwwr {
+        background: $primary;
+        font-size: 14px;
+    }
+    .dwbc {
+        border-bottom: 0;
+    }
+    .dwb {
+        color: #fff;
+        font-size: 16px;
+        padding: 1em 45px;
+        height: auto;
+        line-height: 1;
+    }
+    .dwc {
+        overflow: visible;
+    }
+    .dw-li {
+        font-size: 1em;
+        color: #fff;
+    }
+    .dw-sel {
+        color: #fff;
+    }
+    .dwwo {
+        background: linear-gradient($primary, rgba($primary, 0) 52%, rgba($primary, 0) 48%, $primary);
+    }
+    .dwhl .dwwc {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .dwwol {
+        border-top-color: $borderRed;
+        border-bottom-color: $borderRed;
+    }
+
+    &.dw-select {
+        .dw-li {
+            text-align: center;
+        }
+        .dwwo {
+            display: block;
+        }
+    }
+}
+
+.dw-hsel {
+    display: none;
+}

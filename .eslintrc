@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb-base/legacy",
+    "installedESLint": true,
+    "rules": {
+    	"indent": ["error", 4],
+    	"quotes": ["error", "double"],
+    	"max-len": ["error", 200],
+    	"func-names": 0,
+    	"no-alert": 0,
+    	"newline-per-chained-call": 0,
+    	"space-before-function-paren": ["error", "never"],
+    },
+    "globals": {
+    	"jQuery": true,
+    	"$": true,
+    }
+}

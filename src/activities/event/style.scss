@@ -1,0 +1,174 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font: 200 14px/1 sans-serif;
+}
+
+body {
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+	-webkit-tap-highlight-color: transparent;
+	background: #000 url(img/bg.jpg) no-repeat;
+	background-size: 100% auto;
+	color: #fff;
+	margin: 0;
+	text-align: center;
+
+	&.bgs {
+		background-image: url(img/bgs.jpg);
+	}
+
+	&.bgls {
+		background-image: url(img/bgls.jpg);
+	}
+}
+
+img {
+	vertical-align: top;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+.title {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+.link {
+	display: block;
+	margin-bottom: 35px;
+}
+
+.qrcode {
+	margin-bottom: 30px;
+	border: 1px solid rgba(#fff, 0.5);
+	padding: 4px;
+	width: 39.37%;
+	box-sizing: content-box;
+}
+
+.coupon {
+	padding-top: 35%;
+	background: no-repeat 50%;
+	background-size: contain;
+}
+$brand_list: "bud", "bud", "mixxtail", "xr", "corona";
+$type_list: "bud_bottle", "bud_can", "mixxtail", "xr", "corona";
+@for $i from 1 through length($brand_list) {
+	$brand: nth($brand_list, $i);
+	$type: nth($type_list, $i);
+
+	// .coupon-wrap.type-#{$i}:after { background-image: url(img/tag_#{$brand}.png) }
+
+	@for $count from 1 through 3 {
+		.type-#{$i}.count-#{$count} { background-image: url(img/coupon_#{$type}_#{$count}.png) }
+	}
+}
+
+.btn {
+	background-color: rgba(#fff, 0.15);
+	border: 1px solid transparent;
+	border-image: url(img/border.png) 2 repeat;
+	width: 70%;
+	min-width: 250px;
+	display: block;
+	line-height: 1.4;
+	padding: 10px 0;
+	font-size: 18px;
+	text-align: center;
+	margin: 0 auto 3%;
+	color: #fff;
+}
+
+.btn-ghost {
+	background: none;
+}
+
+#logo {
+	display: none;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+#rules {
+	position: relative;
+	background: #FD3944;
+	padding: 20px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: 300;
+	display: none;
+
+	h3 {
+		text-align: center;
+		font-size: 1em;
+		margin-bottom: 1em;
+	}
+
+	p {
+		line-height: 1.5;
+	}
+}
+
+
+.recommend-list {
+	list-style: none;
+	margin: 0 auto 9%;
+	overflow: hidden;
+	width: 90%;
+	min-width: 300px;
+	max-width: 400px;
+	li {
+		width: 50%;
+		float: left;
+		margin-bottom: 6px;
+
+		a {
+			display: block;
+			margin: 0 3px;
+			border-width: 1px;
+			border-image: url(img/border.png) 2 repeat;
+			color: #fff;
+			text-align: center;
+
+			.inner {
+				background: rgba(#e7cdff, 0.2);	
+				margin: 3px;
+				overflow: hidden;		
+			}
+
+			.pic {
+				background: no-repeat 50%;
+				background-size: cover;
+				padding-top: 60%;
+				margin-bottom: 8px;
+			}
+			.name {
+				font-weight: normal;
+				font-size: 1em;
+				width: 90%;
+				margin: 0 auto 5px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			.area {
+				display: block;
+				font-size: 12px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+}

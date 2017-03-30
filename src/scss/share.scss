@@ -1,0 +1,36 @@
+@import "variables";
+
+html {
+    font: 14px/1 sans-serif;
+}
+
+body {
+    background: $primary url(../img/share/bg.jpg) no-repeat 50% 0;
+    background-size: 100% auto;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+
+.qrcode-box {
+    position: relative;
+    width: 250px;
+    margin: 70px auto 50px;
+
+    .qrcode {
+        background: #fff;
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    .tip {
+        font-size: 16px;
+    }
+}
+
+.desc {
+    margin: 0;
+    color: #fff;
+    line-height: 2;
+}

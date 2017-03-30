@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>夜点送你KTV兑酒券！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrapper">
+	<div id="scroller">
+		<div id="main">
+			<div id="couponBox">
+				<p id="count"><p>
+				<div id="coupon"></div>
+				<p id="remain"></p>
+
+				<div id="tip">这是您已经领取过的兑酒券哦～</div>
+			</div>
+
+			<div id="heading"></div>
+
+			<img src="img/cutoff.png" id="cutoff" />
+
+			<div id="qrcodeBox">
+				<img src="img/qrcode.jpg" class="pde">
+			</div>
+
+			<div id="rules">
+				<img src="img/rules.png" alt="">
+				<ol>
+					<li>红包新老用户均可领取；</li>
+					<li>用户通过夜点使用兑酒券预订KTV并到店成功开房，可获得兑酒券相应数量的酒水；</li>
+					<li>每个预订KTV订单只能使用一张兑酒券；</li>
+					<li>此兑酒券可在成功领取12小时后使用，有效期为14天；</li>
+					<li>为使更多用户获益，如发现作弊行为，夜点有权取消作弊用户奖励</li>
+				</ol>
+			</div>
+
+			<div id="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+			<div id="btnsHolder"></div>
+		</div>
+	</div>
+
+	<div id="btns">
+		<a href="../" class="pde btn" data-track="bookKtv">立即预订KTV</a>
+		<a href="../#!/coupon" class="pde btn btn-ghost" data-track="viewCoupon">查看我的兑酒券</a>
+	</div>
+</div>
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="../act/assets/js/jquery-2.2.3.min.js"></script>
+<script src="../act/assets/js/iscroll-lite.js"></script>
+<script src="../act/assets/js/yd.js"></script>
+<script src="js/app.js"></script>
+<script>
+var _hmt = _hmt || [];
+_hmt.push(["_setAutoPageview", false]);
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?a9e84022ad4ba5c4e42b26942cda6755";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

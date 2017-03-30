@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>见周董前的杰迷K房派对</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="style.css?v=0718">
+</head>
+<body>
+
+<img src="img/banner.jpg" id="banner">
+<div id="main"></div>
+
+<div class="modal" id="modal-rundown">
+	<div class="modal-dialog">
+		<span class="close"></span>
+
+		<div class="modal-body">
+			<h4><img src="img/hd_rules.png" width="96"></h4>
+			<ul>
+				<li>活动时间：2016年7月24日14:00－17:00；</li>
+				<li>活动地点：<span class="address"></span>；</li>
+				<li>报名截止时间：2016年7月22日 21:00；</li>
+				<li>用户需通过夜点提前报名本次活动，活动当日方可进场；</li>
+				<li>本次活动最终解释权利归夜点娱乐及JAYCN广东歌迷会所有。</li>
+			</ul>
+
+			<h4><img src="img/hd_plan.png" width="142"></h4>
+			<ul>
+				<li>签到合影环节：粉丝签到入场，领取杰迷专属入门礼品，可与现场主题背景墙拍照留念；</li>
+				<li>游戏环节：歌曲接龙，超级模仿秀，你画我猜等现场游戏等你来战，参与活动即有机会得奖；</li>
+				<li>抽奖送礼环节：多重好礼大抽奖；</li>
+				<li>杰迷大合唱：K房自由欢唱</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="modal-reg">
+	<form class="modal-dialog" id="regForm">
+		<span class="close"></span>
+
+		<div class="modal-body">
+			<h4><img src="img/hd_reginfo.png" width="94"></h4>
+			<div class="fields">
+				<div class="field">
+					<label class="icon icon-name"></label>
+					<input type="text" placeholder="昵称" name="name">
+				</div>
+				<div class="field">
+					<label class="icon icon-phone"></label>
+					<input type="tel" placeholder="手机号" name="phone">
+				</div>
+				<div class="field">
+					<label class="icon icon-gender"></label>
+					<select name="gender" class="default">
+						<option value="-1" disabled selected>性别</option>
+						<option value="0">男</option>
+						<option value="1">女</option>
+					</select>
+				</div>
+			</div>
+
+			<h4><img src="img/hd_detail_red.png" width="95"></h4>
+			<ul class="detail">
+				<li>派对时间：7月<span class="day"></span>日 14点－17点</li>
+				<li>派对地点：<span class="address"></span></li>
+				<li>费用：30元/人</li>
+				<li>小组：<span class="groupname"></span></li>
+			</ul>
+		</div>
+
+		<div class="modal-footer">
+			<input type="hidden" name="gid">
+			<button type="submit">确定</button>
+		</div>
+	</form>
+</div>
+
+<div id="shareLayer">
+	<img src="img/share.png" alt="">
+</div>
+
+<script type="text/tempalte" id="tmpl-index">
+	<div id="text">
+		{{if over}}
+		<img src="img/text_over.png" width="242">
+		{{else}}
+		<img src="img/text_belong.png" width="285">
+		{{/if}}
+	</div>
+	<div id="centerInfo">
+		{{if over}}
+		<a href="/dist/" class="btn" id="btnKtv">预订更多 KTV</a>
+		{{else}}
+		<ul>
+			<li>当日派对剩余名额：<span class="members">{{remain}}/{{total}}</span></li>
+			<li>报名截止时间：7月22日 21:00</li>
+		</ul>
+		<ul>
+			<li>派对时间：7月24日 14点－17点</li>
+			<li>派对地点：{{address}}</li>
+			<li>费用：30元/人</li>
+			<li>每场派对前100位报名用户将获得大巴接送往返当天周杰伦演唱会福利！</li>
+		</ul>
+		<a href="javascript:;" class="btn" id="btnRundown">活动流程</a>
+		{{/if}}
+	</div>
+	<div id="groupBox">
+		<div class="tab-pane" style="display:block">
+			<ul class="groupList">
+				{{each day24groups as group}}
+				<li>
+					<div class="group {{if group.count >= group.total}}disabled{{/if}}">
+						<div class="info" data-id="{{group.id}}">
+							<p>小组：<span class="name">{{group.name}}</span></p>
+							<p>{{group.count}}/{{group.total}}</p>
+						</div>
+						{{if !over}}<a class="btnJoin" data-id="{{group.id}}" data-day="24"></a>{{/if}}
+					</div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</script>
+
+<script type="text/tempalte" id="tmpl-groupDetail">
+	<div id="text">
+		<dl id="groupInfo">
+			<dt class="name"></dt>
+			<dd>{{name}}</span></dd>
+			<dt class="date"></dt>
+			<dd>7月{{day}}日</span></dd>
+			<dt class="members"></dt>
+			<dd>{{count}}/{{total}}</span></dd>
+		</ul>
+	</div>
+	<div id="groupMemberList">
+		<table>
+			<thead>
+				<th><img src="img/nickname.png" ></th>
+				<th><img src="img/gender.png" ></th>
+			</thead>
+			<tbody>
+				{{each userlist as member}}
+				<tr>
+					<td>{{member.name}}</td>
+					<td><span class="gender {{if member.sex}}female{{else}}male{{/if}}"></span></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	{{if count < total}}<div class="btn-float" id="btnJoin"></div>{{/if}}
+</script>
+
+<script type="text/tempalte" id="tmpl-orderDetail">
+	<div id="text">
+		<img src="img/text_belong.png" width="285">
+	</div>
+	<div id="centerInfo">
+		<h4><img src="img/hd_detail.png" width="88"></h4>
+		<ul>
+			<li>派对时间：7月{{day}}日 14点－17点</li>
+			<li>派对地点：{{address}}</li>
+			<li>费用：30元/人</li>
+			<li>小组：{{name}}</li>
+			<li>每场派对前100位报名用户将获得大巴接送往返当天周杰伦演唱会福利！</li>
+		</ul>
+	</div>
+	<div id="verifyCode">
+		<h4><img src="img/hd_code.png" width="67"></h4>
+		<img src="{{qrcode}}" id="code">
+	</div>
+	<div class="btn-float" id="btnFriend"></div>
+</script>
+
+<script type="text/tempalte" id="tmpl-invite">
+	<div id="text">
+		<img src="img/text_invite.png" width="244">
+	</div>
+	<div id="centerInfo" class="partyInfo">
+		<ul>
+			<li>派对时间：7月{{day}}日 14点－17点</li>
+			<li>派对地点：{{address}}</li>
+			<li>费用：30元/人</li>
+			<li>小组：{{name}}</li>
+			<li>房间剩余名额：{{count}}位</li>
+			<li>报名截止时间：7月22日 21:00</li>
+			<li>每场派对前100位报名用户将获得大巴接送往返当天周杰伦演唱会福利！</li>
+		</ul>
+	</div>
+	<div id="qrcodeBox">
+		<div class="inner">
+			<img src="img/qrcode_invite.png" class="qrcode">
+			<div class="how">
+				<img src="img/hd_how.png" class="hd">
+				<ul>
+					<li>长按关注夜点娱乐</li>
+					<li>点击微信菜单“立即预订”选择“见周董前的杰迷K房派对”活动即可参加</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/tempalte" id="tmpl-share">
+	<div id="text">
+		<img src="img/text_belong.png" width="285">
+	</div>
+	<div id="centerInfo">
+		<ul>
+			<li>派对时间：7月24日 14点－17点</li>
+			<li>派对地点：{{address}}</li>
+			<li>剩余名额：{{remain}}/{{total}}</li>
+			<li>每场派对前100位报名用户将获得大巴接送往返当天周杰伦演唱会福利！</li>
+		</ul>
+	</div>
+	<div id="qrcodeBox">
+		<div class="inner">
+			<div class="title">
+				<img src="img/text_found.png">
+			</div>
+			<img src="img/qrcode.png" class="qrcode">
+			<div class="how">
+				<img src="img/hd_how.png" class="hd">
+				<ul>
+					<li>长按关注夜点娱乐</li>
+					<li>点击微信菜单“立即预订”选择“见周董前的杰迷K房派对”活动即可参加</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="../act/assets/js/jquery-2.2.3.min.js"></script>
+<script src="../act/assets/js/template.js"></script>
+<script src="../act/assets/js/yd-b40979c0eb.js"></script>
+<script>var _hmt = _hmt || [];</script>
+<script src="js/app-773c042531.js"></script>
+<script>
+_hmt.push(["_setAutoPageview", false]);
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "//hm.baidu.com/hm.js?a9e84022ad4ba5c4e42b26942cda6755";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

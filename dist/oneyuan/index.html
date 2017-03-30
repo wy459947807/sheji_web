@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>什么！不花钱就能办派对？</title>
+    <meta name="hotcss" content="initial-dpr=1, design-width=750, max-width=768">
+    <script src="../act/assets/js/hotcss.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="mainPage">
+	<div id="status">
+		<div class="inner">
+			<div class="countdown_text">
+				<span class="still_text"><img src="img/still_text.png" alt="距离开抢还有"></span>
+				<span id="countdown"></span>
+			</div>
+
+			<img src="img/grabing.png" class="grabing_text">
+			<img src="img/grab_over.png" class="over_text">
+		</div>
+	</div>
+
+	<div id="grabarea">
+		<button type="button" id="grab"></button>
+		<img src="img/all_taken.png" alt="抢光啦" class="all_taken_text">
+	</div>
+
+	<div class="btns">
+		<a class="btn_ktv ktv-link" data-track="等不及了"><img src="img/btn_ktv.png"></a>
+		<a class="btn_now ktv-link" data-track="现在就要"><img src="img/btn_now.png"></a>
+		<a class="btn_friends" data-track="拉好友一起"><img src="img/btn_friends.png"></a>
+	</div>
+
+	<div class="rule"></div>
+</div>
+
+<div class="popup" id="popup_countdown">
+	<span class="countdown"></span>
+
+	<div><img class="qrcode" src="img/qrcode.jpg"></div>
+
+	<img class="btn btn_close btn_wait" src="img/btn_wait.png" data-track="耐心等候">
+</div>
+
+<div class="popup" id="popup_queue">
+	<div class="queue_animate"></div>
+
+	<img class="btn btn_close btn_exit" src="img/btn_exit.png" data-track="退出排队">
+</div>
+
+
+<div id="winPage" class="resultPage">
+	<h2><img src="img/win_text.png" alt="恭喜您"></h2>
+
+	<form>
+		<input type="tel" name="phone" placeholder="请输入您的预订手机号">
+		<button type="submit"></button>
+	</form>
+
+	<img src="img/win_tip.png" class="tip" alt="提示">
+</div>
+
+<div id="losePage" class="resultPage">
+	<h2><img src="img/lose_text.png" alt="很遗憾"></h2>
+
+	<img src="img/lost_again.png" class="btn btn_again" data-track="lose再抢一次">
+
+	<div class="btns">
+		<a class="btn_ktv ktv-link" data-track="lose等不及了"><img src="img/btn_ktv.png"></a>
+		<a class="btn_friends" data-track="lose拉好友一起"><img src="img/btn_friends.png"></a>
+	</div>
+
+	<div class="qrcodebox">
+		<img src="img/qrcode.jpg" class="qrcode">
+	</div>
+</div>
+
+<div class="popup" id="popup_code">
+	<input type="text" class="code" readonly>
+
+	<div><img class="qrcode" src="img/qrcode.jpg"></div>	
+</div>
+
+<div id="shareLayer">
+	<img src="img/share.png">
+</div>
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="../act/assets/js/jquery-2.2.3.min.js"></script>
+<script src="../act/assets/js/yd-b40979c0eb.js"></script>
+<script src="js/app-332dd8f84b.js"></script>
+<script>
+var _hmt = _hmt || [];
+_hmt.push(["_setAutoPageview", false]);
+if (location.search.indexOf("code=") === -1) _hmt.push(["_trackPageview", location.pathname]);
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?a9e84022ad4ba5c4e42b26942cda6755";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

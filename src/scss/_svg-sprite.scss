@@ -1,0 +1,40 @@
+
+$mark-djq: (
+	width: 60.43px,
+	height: 20.75px,
+	// background-position: 0 -20.7px,
+	background-position: 0 54.11764705882353%,
+);
+
+
+$mark-djq-noborder: (
+	width: 56.6px,
+	height: 17.45px,
+	// background-position: -61.85px 0,
+	background-position: 99.11858974358975% 0,
+);
+
+
+$mark-zxf: (
+	width: 61.85px,
+	height: 20.7px,
+	// background-position: 0 0,
+	background-position: 0 0,
+);
+
+
+$mark-zxf-noborder: (
+	width: 57.35px,
+	height: 16.75px,
+	// background-position: 0 -41.45px,
+	background-position: 0 98.10650887573965%,
+);
+
+
+@mixin svg-icon($icon) {
+	background: url("../img/icons/sprite.svg") no-repeat;
+	width: map-get($icon, width);
+	height: map-get($icon, height);
+	background-position: map-get($icon, background-position);
+}
+

@@ -1,0 +1,106 @@
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	display: table;
+	width: 100%;
+	margin: 0;
+	background: #090203 url(../img/landing/bg.jpg) no-repeat 50%;
+	background-size: cover;
+	color: #fff;
+	font: 300 16px/1 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", Arial, sans-serif;
+}
+
+.about {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.logo {
+	width: 250px;
+	margin-bottom: 20px;
+}
+
+.desc {
+	line-height: 2em;
+	text-align: left;
+	width: 26em;
+	margin: 0 auto 100px;
+}
+
+.pic {
+	display: table-cell;
+	width:  34.375%;
+	background: rgba(#de3341, 0.8);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.qrcode {
+	position: relative;
+	width: 172px;
+	margin: 0 auto 1em;
+
+	&:after {
+		position: absolute;
+		top: 68px;
+		left: 68px;
+		background: url(../img/landing/qrcode.png) no-repeat 50%;
+		width: 37px;
+		height: 37px;
+		content: "";
+		pointer-events: none;
+	}
+}
+
+#qrcode {
+	width: 100%;
+}
+
+.text {
+	margin: 0;
+	line-height: 1.8;
+}
+
+
+@media (min-width: 1440px) {
+	body {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	html, body {
+		overflow: auto;
+		height: auto;
+		min-height: 100%;
+	}
+	body {
+		display: block;
+		font-size: 14px;
+	}
+	.about {
+		display: block;
+		margin: 30px auto 50px;
+	}
+	.logo {
+		width: 145px;
+	}
+	.desc {
+		width: 90%;
+		max-width: 26em;
+		margin-bottom: 30px;
+	}
+	.slogan {
+		width: 252px;
+	}
+	.pic {
+		display: block;
+		width: auto;
+		padding: 60px 0;
+	}
+}

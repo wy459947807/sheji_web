@@ -1,0 +1,27 @@
+@import "sprite";
+
+%sprite {
+	background-image: url($retina-spritesheet-image);
+	background-size: $spritesheet-width $spritesheet-height;
+}
+
+@mixin sprite-size($sprite) {
+	width: nth($sprite, 5);
+	height: nth($sprite, 6);
+}
+
+@mixin rsprite($retina-group, $outputWidthHeight: true, $extend: true) {
+    $normal-sprite: nth($retina-group, 2);
+    $retina-sprite: nth($retina-group, 3);
+
+    @if $extend==true {
+      @extend %sprite;
+    }
+
+    @include sprite-position($normal-sprite);
+
+    @if $outputWidthHeight==true {
+       @include sprite-width($normal-sprite);
+       @include sprite-height($normal-sprite);
+    }
+}
